@@ -62,8 +62,6 @@ THIRD_PARTY_APPS = [
     'rest_framework',
 ]
 
-AUTH_USER_MODEL = 'accounts.User'
-
 INSTALLED_APPS = DJANGO_APPS + PROJECT_APPS + THIRD_PARTY_APPS
 
 MIDDLEWARE = [
