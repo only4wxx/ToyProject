@@ -74,6 +74,14 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+# CORS_ALLOW_CREDENTIALS가 Ture인 경우, 쿠키가 cross-site HTTP 요청에 포함될 수 있도록 해줌
+CORS_ALLOW_CREDENTIALS = True
+
+CORS_ALLOWED_ORIGINS = [ 
+    "http://localhost:3000",
+    "http://127.0.0.1:3000",
+]
+
 ROOT_URLCONF = 'config.urls'
 
 TEMPLATES = [
