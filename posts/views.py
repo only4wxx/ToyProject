@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.shortcuts import get_object_or_404
 
 from .models import Post
-from .serializers import PostSerializer
+from .serializers import PostSerializer, AllPostSerializer
 
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -21,7 +21,7 @@ class PostList(APIView):
     
     def get(self, request, format=None):
         posts = Post.objects.all().order_by('-created_at') # 시간 내림차순 정렬
-        serializer = PostSerializer(posts, many=True)
+        serializer = AllPostSerializer(posts, many=True)
         return Response(serializer.data)
 
 class PostDetail(APIView):
